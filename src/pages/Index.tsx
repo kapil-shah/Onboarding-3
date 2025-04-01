@@ -1,13 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from "react";
+import { OnboardingLayout } from "@/components/onboarding/OnboardingLayout";
+import { PersonalInfoForm } from "@/components/onboarding/PersonalInfoForm";
 
 const Index = () => {
+  const handleBack = () => {
+    console.log("Navigate back to previous step");
+    // In a real application, this would navigate to the previous step
+  };
+
+  const handleContinue = () => {
+    console.log("Navigate to next step");
+    // In a real application, this would navigate to the next step
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <OnboardingLayout
+      title="Join the Knowledge Hub"
+      subtitle="Your personalized AI knowledge platform."
+      currentStep={3}
+      totalSteps={5}
+    >
+      <PersonalInfoForm onBack={handleBack} onContinue={handleContinue} />
+    </OnboardingLayout>
   );
 };
 
